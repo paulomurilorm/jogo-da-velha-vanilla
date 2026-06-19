@@ -1,0 +1,61 @@
+/* TABULEIRO DO GAME */
+
+#game-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  height: auto;
+  max-height: 800px;
+  width: 100%;
+}
+
+#container-jogo {
+  /* Alinhamento e afins */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 150px);
+  position: relative;
+  height: 30%;
+  width: 80%;
+  max-width: 450px;
+  margin: auto;
+}
+
+.box {
+  /* Alinhamento e afins */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  /* Estilização */
+  border: 5px solid var(--cor-primária);
+}
+
+#block-1,
+#block-2,
+#block-3 {
+  /* Alinhamento e afins */
+  border-top: none;
+}
+
+#block-1,
+#block-4,
+#block-7 {
+  /* Alinhamento e afins */
+  border-left: none;
+}
+
+#block-7,
+#block-8,
+#block-9 {
+  /* Alinhamento e afins */
+  border-bottom: none;
+}
+
+#block-3,
+#block-6,
+#block-9 {
+  /* Alinhamento e afins */
+  border-right: none;
+}

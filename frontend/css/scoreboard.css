@@ -1,0 +1,75 @@
+/* PLACAR */
+
+#container-score {
+  /* Alinhamento e afins */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0 auto 20px auto;
+  width: 90%;
+  max-width: 400px;
+  /* Estilização */
+  background-color: rgb(26, 26, 26);
+}
+
+#scoreboard-container {
+  /* Alinhamento e afins */
+  position: relative;
+  margin: 15px auto;
+  /* Estilização */
+  font-weight: bold;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+}
+
+#x-scoreboard {
+  /* Alinhamento e afins */
+  margin-right: 3px;
+  /* Estilização */
+  color: red;
+}
+
+#o-scoreboard {
+  /* Alinhamento e afins */
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-right: 3px;
+  /* Estilização */
+  border: 2px solid rgb(0, 255, 0);
+  border-radius: 50%;
+}
+
+/* MENSAGEM DE VITÓRIA */
+
+#message {
+  /* Alinhamento e afins */
+  position: absolute; /* Fixa o elemento estritamente nos limites do #container-jogo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Fica por cima das linhas e símbolos do jogo */
+  /* Estilização */
+  background-color: rgba(44, 44, 44, 0.4);
+}
+
+#message p {
+  /* Alinhamento e afins */
+  margin: 0;
+  width: 85%;
+  max-width: 400px;
+  padding: 20px;
+  /* Estilização */
+  border: 3px solid var(--bordas);
+  border-radius: 10px;
+  font-size: 36px;
+  color: var(--text-color);
+  background-color: black;
+  text-align: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+}

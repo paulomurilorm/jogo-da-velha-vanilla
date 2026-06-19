@@ -1,0 +1,21 @@
+/* SÍMBOLOS */
+
+.x {
+  /* Alinhamento e afins */
+  display: inline-block;
+  line-height: 100px;
+  /* Estilização */
+  font-size: 130px;
+  color: red;
+}
+
+.o {
+  /* Alinhamento e afins */
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  /* Estilização */
+  border: 5px solid rgb(0, 255, 0);
+  border-radius: 50%;
+}

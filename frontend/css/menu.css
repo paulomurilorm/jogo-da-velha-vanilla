@@ -1,0 +1,81 @@
+/* CONTAINER MENU */
+
+#containerMenu {
+  /* Alinhamento e afins */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* CONTAINER TÍTULO */
+
+#container-titulo-botões {
+  /* Alinhamento e afins */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  max-width: 2500px;
+  padding: 10px;
+  gap: 10px;
+  /* Estilização */
+  border: 3px solid var(--cor-primária);
+  border-radius: 10px;
+  background-color: rgb(26, 26, 26);
+}
+
+/* BOTÕES */
+
+#buttons-container button {
+  /* Alinhamento e afins */
+  flex-wrap: wrap;
+  padding: 10px 15px;
+  margin: 0 10px;
+  /* Estilização */
+  font-weight: bold;
+  border: 2px solid var(--cor-primária);
+  border-radius: 10px;
+  background-color: rgb(58, 58, 58);
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 2px 3px var(--text-shadow-color);
+  /* Animações */
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+}
+
+#buttons-container button:hover {
+  /* Estilização */
+  background-color: rgb(0, 0, 0); /* Escurece um pouco */
+  /* Animações */
+  transform: scale(1.05); /* Dá uma leve aumentada (zoom in) */
+  cursor: pointer; /* Muda a setinha do mouse para a mãozinha */
+}
+
+#buttons-container button:active {
+  /* Estilização */
+  background-color: rgb(78, 78, 78);
+  /* Animações */
+  transform: scale(0.95); /* O botão dá uma "afundada" (zoom out) */
+}
+
+/* ESTILOS EXCLUSIVOS PARA TELAS DE CELULAR (até 600px de largura) */
+
+@media (max-width: 600px) {
+  #buttons-container {
+    /* Alinhamento e afins */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #buttons-container button {
+    /* Alinhamento e afins */
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+  }
+}
