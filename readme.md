@@ -18,11 +18,9 @@ Um clássico jogo da velha desenvolvido inteiramente com **HTML, CSS e JavaScrip
 
 ## 🚀 Como Executar o Projeto
 
-Como é um projeto Vanilla Frontend, não é necessária nenhuma instalação complexa de dependências.
+Acesse o `link` abaixo:
 
-1. Faça o download do projeto.
-2. Abra a pasta principal e depois entre na pasta "frontend".
-3. Utilize a extensão `Live Server` no VS Code para abrir o index.html.
+https://paulomurilorm.github.io/jogo-da-velha-vanilla/
 
 ## 🧠 Oportunidades de Melhoria
 
