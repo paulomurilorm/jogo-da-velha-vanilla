@@ -1,0 +1,18 @@
+/* ESTILOS EXCLUSIVOS PARA TELAS DE CELULAR (até 600px de largura) */
+
+@media (max-width: 600px) {
+  #buttons-container {
+    /* Alinhamento e afins */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #buttons-container button {
+    /* Alinhamento e afins */
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+  }
+}

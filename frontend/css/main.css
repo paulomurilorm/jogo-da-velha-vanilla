@@ -3,6 +3,7 @@
 @import url(./elements-game.css);
 @import url(./game.css);
 @import url(./scoreboard.css);
+@import url(./responsive.css);
 
 /* Isso aplica o border-box para TODOS os elementos da página */
 *,
