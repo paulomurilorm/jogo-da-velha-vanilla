@@ -3,17 +3,17 @@
 .x {
   /* Alinhamento e afins */
   display: inline-block;
-  line-height: 100px;
+  line-height: 1;
   /* Estilização */
-  font-size: 130px;
+  font-size: clamp(60px, 15vw, 120px);
   color: red;
 }
 
 .o {
   /* Alinhamento e afins */
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 75%;
+  aspect-ratio: 1/1;
   margin: auto;
   /* Estilização */
   border: 5px solid rgb(0, 255, 0);
