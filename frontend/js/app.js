@@ -1,21 +1,19 @@
 "use strict";
 
 import {
-  x,
-  o,
   boxes,
   buttons,
   buttonMenu,
   messageContainer,
-  messageText,
+  gameBoard,
+  scoreBoard,
 } from "./dom.js";
 
 import {
   gameState,
-  checkEl,
+  checkElement,
   computerPlay,
   checkWinCondition,
-  declareWinner,
   menu,
 } from "./function.js";
 
@@ -35,22 +33,23 @@ for (let i = 0; i < buttons.length; i++) {
 
       setTimeout(() => {
         // ---
-        let containerJogo = document.querySelector("#container-jogo");
-        let containerScore = document.querySelector("#container-score");
+        gameBoard.classList.remove("hide");
+        scoreBoard.classList.remove("hide");
 
-        containerJogo.classList.remove("hide");
-        containerScore.classList.remove("hide");
-        // ---
         for (let p = 0; p < buttons.length; p++) {
+          // ---
           buttons[p].classList.add("hide");
         }
-        // ---
+
         buttonMenu.classList.remove("hide");
         gameState.isGameLocked = false;
         gameState.travaBotaoModoJogo = false;
         document.body.style.cursor = "default";
+        // ---
       }, 1000);
+      // ---
     } else {
+      // ---
       return;
     }
   });
@@ -70,11 +69,15 @@ buttonMenu.addEventListener("click", function () {
     document.body.style.cursor = "wait";
 
     setTimeout(() => {
+      // ---
       menu();
       gameState.travaBotaoMenu = false;
       document.body.style.cursor = "default";
+      // ---
     }, 1000);
+    // ---
   } else {
+    // ---
     return;
   }
 });
@@ -88,14 +91,15 @@ for (let i = 0; i < boxes.length; i++) {
 
     if (gameState.isGameLocked) return; // Trava para não interagir quando terminar o jogo
 
-    let el = checkEl();
+    const element = checkElement();
 
     // Verifica se já tem um elemento na box.
 
     if (this.childNodes.length === 0) {
-      let cloneEl = el.cloneNode(true);
+      // ---
+      const cloneElement = element.cloneNode(true);
 
-      this.appendChild(cloneEl);
+      this.appendChild(cloneElement);
 
       // Computa a jogada
 
@@ -108,20 +112,25 @@ for (let i = 0; i < boxes.length; i++) {
           // --- Função executar jogada
           gameState.isGameLocked = true;
           document.body.style.cursor = "wait"; // Cursor do mouse fica na bolinha de carregando
-          // ---
+
           setTimeout(() => {
+            // ---
             computerPlay();
             gameState.player2++;
-            // ---
+
             checkWinCondition();
             document.body.style.cursor = "default"; // Volta o cursor do mouse para o formato padrão
-            // ---
+
             if (messageContainer.classList.contains("hide")) {
+              // ---
               gameState.isGameLocked = false;
             }
+            // ---
           }, 500);
         }
+        // ---
       } else {
+        // ---
         gameState.player2++;
         checkWinCondition();
       }

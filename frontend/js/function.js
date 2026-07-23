@@ -8,6 +8,19 @@ import {
   buttonMenu,
   messageContainer,
   messageText,
+  b1,
+  b2,
+  b3,
+  b4,
+  b5,
+  b6,
+  b7,
+  b8,
+  b9,
+  scoreBoardX,
+  scoreBoardO,
+  scoreBoard,
+  gameBoard,
 } from "./dom.js";
 
 // VARIÁVEIS GLOBAIS
@@ -25,23 +38,26 @@ export let gameState = {
 
 // --- Determina qual será elemento a aparecer na tela quando clicar nas boxes.
 
-export function checkEl() {
+export function checkElement() {
   // ---
-  let xOuBola;
+  let ticTacToe;
 
   if (gameState.player1 === gameState.player2) {
-    xOuBola = x; // Elemento a ser clonado vira o "x"
+    // ---
+    ticTacToe = x; // Elemento a ser clonado vira o "x"
+    // ---
   } else {
-    xOuBola = o; // Elemento a ser clonado vira o "o"
+    // ---
+    ticTacToe = o; // Elemento a ser clonado vira o "o"
   }
-  return xOuBola;
+  return ticTacToe;
 }
 
 // --- Ai Player
 
 export function computerPlay() {
   // ---
-  let cloneO = o.cloneNode(true);
+  const cloneO = o.cloneNode(true);
   let counter = 0;
   let filled = 0;
 
@@ -52,18 +68,22 @@ export function computerPlay() {
     // Verifica se está vazio a box para preencher
 
     if (boxes[i].childNodes[0] === undefined) {
+      // ---
       if (randomNumber <= 1) {
+        // ---
         boxes[i].appendChild(cloneO);
         counter++;
         break;
       }
       // Checagem de quantas box estão preenchidas
     } else {
+      // ---
       filled++;
     }
   }
 
   if (counter === 0 && filled < 9) {
+    // ---
     computerPlay();
   }
 }
@@ -71,17 +91,6 @@ export function computerPlay() {
 // --- Verifica quem foi o vencedor
 
 export function checkWinCondition() {
-  // ---
-  let b1 = document.getElementById("block-1");
-  let b2 = document.getElementById("block-2");
-  let b3 = document.getElementById("block-3");
-  let b4 = document.getElementById("block-4");
-  let b5 = document.getElementById("block-5");
-  let b6 = document.getElementById("block-6");
-  let b7 = document.getElementById("block-7");
-  let b8 = document.getElementById("block-8");
-  let b9 = document.getElementById("block-9");
-
   // --- Horizontais
 
   // --- Box 1 a 3
@@ -92,13 +101,14 @@ export function checkWinCondition() {
     b3.childNodes.length > 0
   ) {
     // ---
-    let b1Child = b1.childNodes[0].className;
-    let b2Child = b2.childNodes[0].className;
-    let b3Child = b3.childNodes[0].className;
+    const b1Child = b1.childNodes[0].className;
+    const b2Child = b2.childNodes[0].className;
+    const b3Child = b3.childNodes[0].className;
 
     if (b1Child === "x" && b2Child === "x" && b3Child === "x") {
       // --- x
       declareWinner("x");
+      // ---
     } else if (b1Child === "o" && b2Child === "o" && b3Child === "o") {
       // --- o
       declareWinner("o");
@@ -113,13 +123,14 @@ export function checkWinCondition() {
     b6.childNodes.length > 0
   ) {
     // ---
-    let b4Child = b4.childNodes[0].className;
-    let b5Child = b5.childNodes[0].className;
-    let b6Child = b6.childNodes[0].className;
+    const b4Child = b4.childNodes[0].className;
+    const b5Child = b5.childNodes[0].className;
+    const b6Child = b6.childNodes[0].className;
 
     if (b4Child === "x" && b5Child === "x" && b6Child === "x") {
       // --- x
       declareWinner("x");
+      // ---
     } else if (b4Child === "o" && b5Child === "o" && b6Child === "o") {
       // --- o
       declareWinner("o");
@@ -134,13 +145,14 @@ export function checkWinCondition() {
     b9.childNodes.length > 0
   ) {
     // ---
-    let b7Child = b7.childNodes[0].className;
-    let b8Child = b8.childNodes[0].className;
-    let b9Child = b9.childNodes[0].className;
+    const b7Child = b7.childNodes[0].className;
+    const b8Child = b8.childNodes[0].className;
+    const b9Child = b9.childNodes[0].className;
 
     if (b7Child === "x" && b8Child === "x" && b9Child === "x") {
       // --- x
       declareWinner("x");
+      // ---
     } else if (b7Child === "o" && b8Child === "o" && b9Child === "o") {
       // --- o
       declareWinner("o");
@@ -157,13 +169,14 @@ export function checkWinCondition() {
     b7.childNodes.length > 0
   ) {
     // ---
-    let b1Child = b1.childNodes[0].className;
-    let b4Child = b4.childNodes[0].className;
-    let b7Child = b7.childNodes[0].className;
+    const b1Child = b1.childNodes[0].className;
+    const b4Child = b4.childNodes[0].className;
+    const b7Child = b7.childNodes[0].className;
 
     if (b1Child === "x" && b4Child === "x" && b7Child === "x") {
       // --- x
       declareWinner("x");
+      // ---
     } else if (b1Child === "o" && b4Child === "o" && b7Child === "o") {
       // --- o
       declareWinner("o");
@@ -178,13 +191,14 @@ export function checkWinCondition() {
     b8.childNodes.length > 0
   ) {
     // ---
-    let b2Child = b2.childNodes[0].className;
-    let b5Child = b5.childNodes[0].className;
-    let b8Child = b8.childNodes[0].className;
+    const b2Child = b2.childNodes[0].className;
+    const b5Child = b5.childNodes[0].className;
+    const b8Child = b8.childNodes[0].className;
 
     if (b2Child === "x" && b5Child === "x" && b8Child === "x") {
       // --- x
       declareWinner("x");
+      // ---
     } else if (b2Child === "o" && b5Child === "o" && b8Child === "o") {
       // --- o
       declareWinner("o");
@@ -199,13 +213,14 @@ export function checkWinCondition() {
     b9.childNodes.length > 0
   ) {
     // ---
-    let b3Child = b3.childNodes[0].className;
-    let b6Child = b6.childNodes[0].className;
-    let b9Child = b9.childNodes[0].className;
+    const b3Child = b3.childNodes[0].className;
+    const b6Child = b6.childNodes[0].className;
+    const b9Child = b9.childNodes[0].className;
 
     if (b3Child === "x" && b6Child === "x" && b9Child === "x") {
       // --- x
       declareWinner("x");
+      // ---
     } else if (b3Child === "o" && b6Child === "o" && b9Child === "o") {
       // --- o
       declareWinner("o");
@@ -222,13 +237,14 @@ export function checkWinCondition() {
     b9.childNodes.length > 0
   ) {
     // ---
-    let b1Child = b1.childNodes[0].className;
-    let b5Child = b5.childNodes[0].className;
-    let b9Child = b9.childNodes[0].className;
+    const b1Child = b1.childNodes[0].className;
+    const b5Child = b5.childNodes[0].className;
+    const b9Child = b9.childNodes[0].className;
 
     if (b1Child === "x" && b5Child === "x" && b9Child === "x") {
       // --- x
       declareWinner("x");
+      // ---
     } else if (b1Child === "o" && b5Child === "o" && b9Child === "o") {
       // --- o
       declareWinner("o");
@@ -243,13 +259,14 @@ export function checkWinCondition() {
     b7.childNodes.length > 0
   ) {
     // ---
-    let b3Child = b3.childNodes[0].className;
-    let b5Child = b5.childNodes[0].className;
-    let b7Child = b7.childNodes[0].className;
+    const b3Child = b3.childNodes[0].className;
+    const b5Child = b5.childNodes[0].className;
+    const b7Child = b7.childNodes[0].className;
 
     if (b3Child === "x" && b5Child === "x" && b7Child === "x") {
       // --- x
       declareWinner("x");
+      // ---
     } else if (b3Child === "o" && b5Child === "o" && b7Child === "o") {
       // --- o
       declareWinner("o");
@@ -261,25 +278,24 @@ export function checkWinCondition() {
   let counter = 0;
 
   for (let i = 0; i < boxes.length; i++) {
+    // ---
     if (boxes[i].childNodes[0] != undefined) {
+      // ---
       counter++;
     }
   }
 
   if (counter === 9 && !gameState.isGameLocked) {
+    // ---
     declareWinner();
   }
 }
 
 // Declara o vencedor, reseta o tabuleiro e atualiza o placar
 
-export function declareWinner(winner) {
+function declareWinner(winner) {
   // ---
-
   gameState.isGameLocked = true; // Trava o tabuleiro até resetar
-
-  let scoreBoardX = document.querySelector("#scoreboard-1");
-  let scoreBoardO = document.querySelector("#scoreboard-2");
 
   let msg = "";
 
@@ -287,11 +303,14 @@ export function declareWinner(winner) {
     // ---
     scoreBoardX.textContent = parseInt(scoreBoardX.textContent) + 1;
     msg = "O jogador X venceu!";
+    // ---
   } else if (winner === "o") {
     // ---
     scoreBoardO.textContent = parseInt(scoreBoardO.textContent) + 1;
     msg = "O jogador O venceu!";
+    // ---
   } else {
+    // ---
     msg = "Deu velha!";
   }
 
@@ -303,7 +322,9 @@ export function declareWinner(winner) {
   // Esconde a mensagem
 
   setTimeout(() => {
+    // ---
     messageContainer.classList.add("hide");
+    // ---
   }, 3000);
 
   // Zera as jogadas
@@ -315,9 +336,10 @@ export function declareWinner(winner) {
 
   setTimeout(() => {
     // ---
-    let boxesToRemove = document.querySelectorAll(".box div");
+    const boxesToRemove = document.querySelectorAll(".box div");
 
     for (let i = 0; i < boxesToRemove.length; i++) {
+      // ---
       boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
     }
 
@@ -330,32 +352,28 @@ export function declareWinner(winner) {
 
 export function menu() {
   // ---
+  gameBoard.classList.add("hide");
+  scoreBoard.classList.add("hide");
 
-  let tabuleiro = document.querySelector("#container-jogo");
-  tabuleiro.classList.add("hide");
-
-  let divPlacar = document.querySelector("#container-score");
-  divPlacar.classList.add("hide");
-
-  let boxesToRemove = document.querySelectorAll(".box div");
+  const boxesToRemove = document.querySelectorAll(".box div");
 
   for (let i = 0; i < boxesToRemove.length; i++) {
+    // ---
     boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
   }
 
   gameState.player1 = 0;
   gameState.player2 = 0;
 
-  let placarX = document.querySelector("#scoreboard-1");
-  let placarO = document.querySelector("#scoreboard-2");
-  placarX.textContent = 0;
-  placarO.textContent = 0;
+  scoreBoardX.textContent = 0;
+  scoreBoardO.textContent = 0;
 
   gameState.secondPlayer = undefined;
 
   buttonMenu.classList.add("hide");
 
   for (let k = 0; k < buttons.length; k++) {
+    // ---
     buttons[k].classList.remove("hide");
   }
 }
