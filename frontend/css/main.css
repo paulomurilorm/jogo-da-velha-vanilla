@@ -21,6 +21,9 @@ body {
   text-align: center;
   min-height: 100vh; /* Garante que a altura seja no mínimo 100% da tela visível */
   margin: 0;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   /* Estilização */
   font-family: Helvetica, sans-serif;
   background-color: rgb(44, 44, 44);
