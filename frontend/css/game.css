@@ -5,21 +5,21 @@
   align-items: center;
   justify-content: center;
   margin: 30px auto;
-  height: auto;
   max-height: 800px;
   width: 100%;
+  flex-grow: 1;
 }
 
 #container-jogo {
   /* Alinhamento e afins */
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(3, 150px);
+  grid-template-rows: repeat(3, 1fr);
   position: relative;
-  height: 30%;
   width: 80%;
   max-width: 450px;
   margin: auto;
+  aspect-ratio: 1/1;
 }
 
 .box {
